@@ -1,0 +1,155 @@
+/* Base Styling */
+:root {
+    --background: #121212;
+    --text-color: #ffffff;
+    --card-background: #1e1e1e;
+    --btn-background: #0073e6;
+    --btn-hover: #005bb5;
+}
+
+.light-mode {
+    --background: #ffffff;
+    --text-color: #121212;
+    --card-background: #f4f4f4;
+    --btn-background: #0073e6;
+    --btn-hover: #005bb5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    animation: fade-in 2s ease-in-out;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background: var(--btn-background);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--btn-hover);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.skill-grid, .project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-card, .project-card {
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-10px);
+}
+
+#theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#toggle-theme {
+    background: var(--btn-background);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#toggle-theme:hover {
+    background: var(--btn-hover);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 2s ease-in;
+}
+
+.zoom-in {
+    animation: zoom-in 1s ease-in-out;
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slide-in 1.5s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
